@@ -26,16 +26,24 @@
           <ul>
             <div class="floatleft">
               <li
-               ui-sref="main"
-               class="brand">
-                <i
-                ui-sref="main"
-                class="fa fa-area-chart"
-                aria-hidden="true"></i>
-                | PinMe
-                </li>
+              ui-sref="main"
+              class="brand">
+              <i
+              ui-sref="main"
+              class="fa fa-area-chart"
+              aria-hidden="true"></i>
+              | PinMe
+            </li>
 
-              </div>
+          </div>
+          <div class="floatright">
+           <li
+              ui-sref="main"
+              class="brand">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+
+            </li>
+          </div>
            <!--  <li class="active"><a ui-sref="main">Home</a></li>
            <li><a ui-sref='food({ foodId: 1 })'>User</a></li> -->
            <li>
@@ -72,11 +80,20 @@
    <script src="/bower_components/angular-animate/angular-animate.js"></script>
    <script src="/bower_components/angular-route/angular-route.js"></script>
    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+   <!-- AngularJS -->
+
+   <!-- Firebase -->
+   <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+   <!-- AngularFire -->
+   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
    <!-- endbower -->
    <!-- endbuild -->
 
    <!-- build:js({.tmp,app}) scripts/scripts.js -->
    <script src="scripts/app.js"></script>
+   <script src="scripts/config/config.js"></script>
+   <script src="scripts/services.js"></script>
    <script src="scripts/controllers/main.js"></script>
    <script src="scripts/controllers/food.js"></script>
    <!-- endbuild -->

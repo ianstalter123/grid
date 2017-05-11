@@ -1,7 +1,9 @@
-<p>This is the food view.</p>
+<p>This is the {{food}} view.</p>
 
 <div class="grid">
-  <div class="cell">
+  <div class="cell"
+  ng-click='toggleModal()'
+  >
    <div id="overlay">
   <img
    class="boximage"
@@ -9,7 +11,8 @@
    alt=""/>
   </div>
   </div>
-  <div class="cell">
+  <div class="cell"
+  ng-click='toggleModal()'>
    <div id="overlay">
   <img
    class="boximage"
@@ -18,7 +21,9 @@
   </div>
   </div>
 
-  <div class="cell">
+  <div class="cell"
+  ng-click='toggleModal()'
+  >
    <div id="overlay">
   <img
    class="boximage"
@@ -28,3 +33,7 @@
   </div>
 
 </div>
+<modal-dialog show='modalShown' width='750px' height='60%'>
+  <p>Modal Content Goes here<p>
+
+</modal-dialog>
