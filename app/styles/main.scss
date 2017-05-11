@@ -43,6 +43,22 @@ body {
   cursor:pointer;
 }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+.cell {
+  flex: 0 0 32%;
+  max-height: 550px;
+  max-width: 350px;
+  background-color: #999;
+}
+.cell:nth-child(3n) {
+  background-color: #F00;
+}
+
 .nav ul {
   list-style: none;
   background-color: white;
