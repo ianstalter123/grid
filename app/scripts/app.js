@@ -42,7 +42,8 @@ angular
       scope: {
         show: '=',
         data: '=',
-        content: '='
+        content: '=',
+        profile: '='
       },
       replace: true, // Replace with the template below
       link: function(scope, element, attrs) {

@@ -1,5 +1,18 @@
 <p>This is the {{food}} view.</p>
 <div class="grid">
+<div class="cell">
+<img
+style="border-radius:60px"
+ src="{{user.data.results[0].picture.large}}"
+ alt="">
+ {{user.data.results[0].name.first}}
+{{user.data.results[0].name.last}}
+</span>
+ </div>
+ <span>
+
+  </div>
+<div class="grid">
   <div ng-repeat="image in images track by $index" class="cell"
   ng-click='toggleModal()'
   >
@@ -13,6 +26,7 @@
 
 </div>
 <modal-dialog
+profile="user.data.results[0].picture"
 data="images"
 content="content"
  show='modalShown' width='750px' height='60%'>

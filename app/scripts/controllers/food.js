@@ -19,6 +19,16 @@ angular.module('joyGridApp')
       .child($scope.food)
       .child('pictures'));
 
+    var loadUser = function() {
+
+      $http.get('https://randomuser.me/api/')
+        .then(function(result) {
+          console.log(result);
+          $scope.user = result;
+        })
+    };
+    loadUser();
+
     var loadContent = function(length) {
       console.log('loading');
       for (var i = 0; i < length; i++) {
@@ -40,11 +50,9 @@ angular.module('joyGridApp')
     $scope.content = [];
 
 
-
-
     //console.log('food', food);
     $scope.modalShown = false;
-    $scope.toggleModal = function() {
+    $scope.toggleModal = function(index) {
       $scope.modalShown = !$scope.modalShown;
     };
   });

@@ -14,6 +14,18 @@ body {
   text-align: center;
 }
 
+.left {
+  position: absolute;
+  bottom: 230px;
+  left: 0px;
+}
+
+.right {
+  position: absolute;
+  bottom: 230px;
+  right: 0px;
+}
+
 .floatleft {
   float:left;
   padding: 5px;
@@ -170,6 +182,7 @@ body {
 .ng-modal-dialog-content {
   padding:10px;
   text-align: left;
+  overflow: hidden;
 }
 .ng-modal-close {
   position: absolute;
