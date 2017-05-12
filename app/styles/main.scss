@@ -36,6 +36,7 @@ body {
   background: white;
   margin: auto;
   border: 1px solid lightgray;
+  cursor: pointer;
 }
 .boximage {
   max-width:100%;
@@ -180,4 +181,16 @@ body {
   display: inline-block;
   font-weight: bold;
   font-family: 'arial', 'sans-serif';
+}
+
+.slide.ng-hide-add,
+.slide.ng-hide-remove {
+}
+.slide.ng-hide-add.ng-hide-add-active,
+.slide.ng-hide-remove {
+  opacity: 0;
+}
+.slide.ng-hide-add,
+.slide.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
 }

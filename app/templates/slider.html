@@ -1,0 +1,13 @@
+<div class="slider">
+  <div class="slide" ng-repeat="image in data" ng-show="image.visible">
+    <img style="height:100%" ng-src="{{image.$value}}" />
+  </div>
+  <div class="arrows">
+    <a href="#" ng-click="prev()">
+      <
+    </a>
+    <a href="#" ng-click="next()">
+     >
+    </a>
+  </div>
+</div>

@@ -1,39 +1,20 @@
 <p>This is the {{food}} view.</p>
-
 <div class="grid">
-  <div class="cell"
+  <div ng-repeat="image in images track by $index" class="cell"
   ng-click='toggleModal()'
   >
    <div id="overlay">
   <img
    class="boximage"
-   src="http://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/images/tomatoplant.jpg?itok=KJNBeA6X"
-   alt=""/>
-  </div>
-  </div>
-  <div class="cell"
-  ng-click='toggleModal()'>
-   <div id="overlay">
-  <img
-   class="boximage"
-   src="http://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/images/tomatoplant.jpg?itok=KJNBeA6X"
-   alt=""/>
-  </div>
-  </div>
-
-  <div class="cell"
-  ng-click='toggleModal()'
-  >
-   <div id="overlay">
-  <img
-   class="boximage"
-   src="http://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/images/tomatoplant.jpg?itok=KJNBeA6X"
+   ng-src="{{image.$value}}"
    alt=""/>
   </div>
   </div>
 
 </div>
-<modal-dialog show='modalShown' width='750px' height='60%'>
+<modal-dialog
+data="images"
+content="content"
+ show='modalShown' width='750px' height='60%'>
   <p>Modal Content Goes here<p>
-
 </modal-dialog>

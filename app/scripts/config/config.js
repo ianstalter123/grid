@@ -9,4 +9,4 @@ angular
       storageBucket: "foodproject-9360f.appspot.com",
       messagingSenderId: "873080593783"
     }
-  })
+  });

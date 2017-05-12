@@ -7,4 +7,4 @@ angular
   firebase.initializeApp(FirebaseConfig.config);
   return firebase.database()
     .ref();
-})
+});
