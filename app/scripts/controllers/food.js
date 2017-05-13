@@ -32,7 +32,7 @@ angular.module('joyGridApp')
     var loadContent = function(length) {
       console.log('loading');
       for (var i = 0; i < length; i++) {
-        $http.get('https://baconipsum.com/api/?type=vegetables-and-filler&paras=1&format=text')
+      $http.get('https://baconipsum.com/api/?type=vegetables-and-filler&paras=1&format=text')
           .then(function(result) {
             console.log(result, $scope.content);
             $scope.content.push(result.data);

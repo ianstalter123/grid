@@ -8,20 +8,33 @@
           <slider data="data" />
         </div>
         <div class="cell">
-        <div style="border-bottom:1px solid gainsboro;">
-          <img
-          style="border-radius:20px"
-          src="{{profile.thumbnail}}"
-          alt="">
+          <div style="border-bottom:1px solid gainsboro;">
+            <img
+            style="border-radius:30px; padding:10px; vertical-align: middle; padding"
+            src="{{profile.picture.thumbnail}}"
+            alt="">
+            <span>
+              {{profile.name.first | capitalize}}
+              {{profile.name.last | capitalize}}
+            </span>
           </div>
           <p style="border-bottom:1px solid gainsboro; padding:10px; max-height: 100%; overflow: hidden">
 
-            {{content[current]}}
+            {{content[current] | limitTo:100}}
 
           </p>
+          <div class="field" style="position: absolute;
+          bottom: 2px;">
+          <span class="fa fa-heart-o errspan" aria-hidden="true"></span>
+          <input
+          class="commentInput"
+          placeholder="Add a comment.."
+          type="text"/>
         </div>
 
       </div>
+
     </div>
   </div>
+</div>
 </div>
