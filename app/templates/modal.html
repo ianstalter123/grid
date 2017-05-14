@@ -4,58 +4,103 @@
     <div class='ng-modal-close' ng-click='hideModal()'>X</div>
     <div class='ng-modal-dialog-content small'>
       <div class="grid">
-        <img
-        style="margin-top: 700px;
-    width: 1000px;
-    height: 100%;"
-        ng-src=" {{data[index].url}}" />
-      </div>
+       <div
+       class="cell"
+       style="border-bottom:1px solid gainsboro;">
+       <img
+       style="border-radius:30px; padding:10px; vertical-align: middle; padding"
+       src="{{profile.picture.medium}}"
+       alt="">
+       <span style="font-size:30px">
+        {{profile.name.first | capitalize}}
+
+      </span>
     </div>
-      <div class='ng-modal-dialog-content full'>
-        <div class="grid">
-          <div class="cell">
-            <slider data="data" />
-          </div>
-          <div class="cell">
-            <div class="dialogContent">
-              <div style="border-bottom:1px solid gainsboro;">
-                <img
-                style="border-radius:30px; padding:10px; vertical-align: middle; padding"
-                src="{{profile.picture.thumbnail}}"
-                alt="">
-                <span>
-                  {{profile.name.first | capitalize}}
-                  {{profile.name.last | capitalize}}
-                </span>
-              </div>
-              <div class="height-20"></div>
-              <div >
-                <span style="padding:10px;">{{data[current].likes}} Likes</span>
-                <span style="float: right; color:gainsboro">2h</span>
-                <p style="border-bottom:1px solid gainsboro; padding:10px; max-height: 100%; overflow: hidden">
+    <div
+    class="cell"
+    style="border-bottom:1px solid gainsboro;">
 
-                  {{content[current] | limitTo:100}}
+  </div>
+  <img
+  style="
+  width: 1000px;
+  height: 100%;"
+  ng-src=" {{data[index].url}}" />
 
-                </p>
-                <ul>
-                  <li
-                  ng-hide="value == null || value.length == 0"
-                  ng-repeat="(key,value) in data[current].comments track by $index" ng-show="value">{{parameter}} {{value}}</li>
-                </ul>
-                <div class="field" style="position: absolute;
-                bottom: 2px;">
-                <span class="fa fa-heart-o errspan" aria-hidden="true"></span>
-                <input
-                ng-enter="submitComment(current)"
-                ng-model="comment"
-                class="commentInput"
-                placeholder="Add a comment.."
-                type="text"/>
-              </div>
-
-            </div>
-          </div>
+  <ul style="
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+  list-style:none;
+  ">
+  <li
+  ng-hide="value == null || value.length == 0"
+  ng-repeat="(key,value) in data[index].comments track by $index" ng-show="value">{{parameter}} {{value}}</li>
+</ul>
+<div class="field" style="position: absolute;
+bottom: 2px; width:1000px">
+<span class="fa fa-heart-o errspan" aria-hidden="true"></span>
+<input
+style="    width: 900px;
+height: 100px;
+font-size: 40px;
+padding: 10px;
+border-left: none;
+border-right: none;
+border-top: 1px solid gainsboro;"
+ng-enter="submitComment(current)"
+ng-model="comment"
+class="commentInput"
+placeholder="Add a comment.."
+type="text"/>
+</div>
+</div>
+</div>
+<div class='ng-modal-dialog-content full'>
+  <div class="grid">
+    <div class="cell">
+      <slider data="data" />
+    </div>
+    <div class="cell">
+      <div class="dialogContent">
+        <div style="border-bottom:1px solid gainsboro;">
+          <img
+          style="border-radius:30px; padding:10px; vertical-align: middle; padding"
+          src="{{profile.picture.thumbnail}}"
+          alt="">
+          <span>
+            {{profile.name.first | capitalize}}
+            {{profile.name.last | capitalize}}
+          </span>
         </div>
+        <div class="height-20"></div>
+        <div >
+          <span style="padding:10px;">{{data[current].likes}} Likes</span>
+          <span style="float: right; color:gainsboro">2h</span>
+          <p style="border-bottom:1px solid gainsboro; padding:10px; max-height: 100%; overflow: hidden">
+
+            {{content[current] | limitTo:100}}
+
+          </p>
+          <ul>
+            <li
+            ng-hide="value == null || value.length == 0"
+            ng-repeat="(key,value) in data[current].comments track by $index" ng-show="value">{{parameter}} {{value}}</li>
+          </ul>
+          <div class="field" style="position: absolute;
+          bottom: 2px;">
+          <span class="fa fa-heart-o errspan" aria-hidden="true"></span>
+          <input
+          ng-enter="submitComment(current)"
+          ng-model="comment"
+          class="commentInput"
+          placeholder="Add a comment.."
+          type="text"/>
+        </div>
+
       </div>
     </div>
   </div>
+</div>
+</div>
+</div>

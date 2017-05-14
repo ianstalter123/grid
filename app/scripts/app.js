@@ -13,6 +13,8 @@ angular
     'config',
     'services',
     'firebase',
+    'ngFileUpload',
+    'angular-cloudinary',
     'ngAnimate',
     'ui.router'
   ])

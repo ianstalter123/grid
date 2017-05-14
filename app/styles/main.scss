@@ -149,16 +149,22 @@ body {
     cursor: default;
   }
 
-    .small{
+  .small{
+    display:none;
+  }
+  @media screen and (min-width: 600px) {
+    .footer {
       display:none;
     }
-  @media screen and (min-width: 600px) {
 
     .nav li {
       width: 120px;
       height: 50px;
       line-height: 50px;
       font-size: 1.4em;
+    }
+    .profImage {
+      border-radius:60px
     }
 
     /* Option 1 - Display Inline */
@@ -168,8 +174,20 @@ body {
     }
   }
   @media screen and (max-width: 400px) {
+
+    .userInfo {
+      font-size:29px !important;
+    }
+    .profImage {
+      border-radius: 140px !important;
+      width: 250px;
+    }
+
     .full {
       display: none !important;
+    }
+    .boximage {
+      width:1000px;
     }
     .boxcard {
       width: 100%;
@@ -190,26 +208,27 @@ body {
       display:inline-block;
     }
     .ng-modal-close {
-          position: absolute;
-    /* bottom: 0px; */
-    /* left: initial; */
-    right: 5px !important;
-    bottom: 1200px !important;
-    /* top: 100px; */
-    top: initial !important;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 55px !important;
-    display: inline-block;
-    font-weight: bold;
-    font-family: 'arial', 'sans-serif';
+      position: absolute;
+      /* bottom: 0px; */
+      /* left: initial; */
+      right: 5px !important;
+      bottom: 1510px !important;
+      /* top: 100px; */
+      top: initial !important;
+      padding: 5px;
+      cursor: pointer;
+      font-size: 55px !important;
+      display: inline-block;
+      font-weight: bold;
+      font-family: 'arial', 'sans-serif';
     }
 
     .ng-modal-dialog {
       display:inline-block;
+      top:inherit !important;
       left: inherit !important;
-      width: 1060px !important;
-      height: 1900px !important;
+         width: 1060px !important;
+    height: 1600px!important;
     }
 
     .ng-modal-overlay {

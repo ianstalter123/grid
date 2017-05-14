@@ -3,7 +3,7 @@
 <head>
   <script src="https://use.fontawesome.com/ac0fc0af67.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <meta charset="utf-8">
   <title></title>
   <meta name="description" content="">
@@ -25,30 +25,30 @@
       <!-- Add your site or application content here -->
       <div
       ng-controller="mainCtrl"
-       class="header">
-        <div class="nav">
-          <ul>
-            <div class="floatleft">
-              <li
-              ui-sref="main"
-              class="brand">
-              <i
-              ui-sref="main"
-              class="fa fa-area-chart"
-              aria-hidden="true"></i>
-              | <span style="font-style:italic;">EatPin</span>
-            </li>
+      class="header">
+      <div class="nav">
+        <ul>
+          <div class="floatleft">
+            <li
+            ui-sref="main"
+            class="brand">
+            <i
+            ui-sref="main"
+            class="fa fa-area-chart"
+            aria-hidden="true"></i>
+            | <span style="font-style:italic;">EatPin</span>
+          </li>
 
-          </div>
-          <div class="floatright">
-           <li
-              class="brand">
-              <i
-              ng-click="toggleUploadDiv()"
-              class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+        <div class="floatright">
+         <li
+         class="brand">
+         <i
+         ng-click="toggleUploadDiv()"
+         class="fa fa-plus" aria-hidden="true"></i>
 
-            </li>
-          </div>
+       </li>
+     </div>
            <!--  <li class="active"><a ui-sref="main">Home</a></li>
            <li><a ui-sref='food({ foodId: 1 })'>User</a></li> -->
            <li>
@@ -62,43 +62,95 @@
       <ui-view></ui-view>
     </div>
 
-    <div class="footer">
-      <div class="container">
-      </div>
+    <div
+    style="
+    position: fixed;
+    bottom: 0px;
+    height: 130px;
+    background: white;
+    width: 2000px;"
+    class="footer">
+    <div class="container">
+      <i
+      style="    color: black;
+      font-size: 100px;
+      float: left;
+      padding:10px;
+       margin-left:20px"
+      class="fa fa-home"
+      ui-sref="main"
+       aria-hidden="true"></i>
+      <i
+      style="    color: black;
+      font-size: 100px;
+      float: left;
+      padding:10px;
+      margin-left:100px"
+      class="fa fa-search" aria-hidden="true"></i>
+      <i
+      style="    color: black;
+      font-size: 100px;
+      float: left;
+      padding:10px;
+       margin-left:100px"
+       ngf-select="upload($file)"
+      class="fa fa-camera" aria-hidden="true"></i>
+      <i
+      style="    color: black;
+      font-size: 100px;
+      float: left;
+      padding:10px;
+       margin-left:100px"
+      class="fa fa-heart"
+
+       aria-hidden="true"></i>
+      <i
+      style="    color: black;
+      font-size: 100px;
+      float: left;
+      padding:10px;
+       margin-left:100px"
+       ui-sref='food({ foodId: "mushrooms" })'
+      class="fa fa-user-circle" aria-hidden="true"></i>
+
     </div>
+  </div>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-     !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-     }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+   !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+     (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+     r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+   }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-     ga('create', 'UA-XXXXX-X');
-     ga('send', 'pageview');
-   </script>
+   ga('create', 'UA-XXXXX-X');
+   ga('send', 'pageview');
+ </script>
 
-   <!-- build:js(.) scripts/vendor.js -->
-   <!-- bower:js -->
-   <script src="/bower_components/angular/angular.js"></script>
-   <script src="/bower_components/angular-animate/angular-animate.js"></script>
-   <script src="/bower_components/angular-route/angular-route.js"></script>
-   <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-   <!-- endbower -->
-   <!-- endbuild -->
-   <!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+ <!-- build:js(.) scripts/vendor.js -->
+ <!-- bower:js -->
+ <script src="/bower_components/angular/angular.js"></script>
+ <script src="/bower_components/angular-animate/angular-animate.js"></script>
+ <script src="/bower_components/angular-route/angular-route.js"></script>
+ <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+ <script src="/bower_components/ng-file-upload/ng-file-upload.js"></script>
+ <script src="/bower_components/angular-cloudinary/angular-cloudinary.js"></script>
+ <!-- endbower -->
+ <!-- endbuild -->
+ <!-- Firebase -->
+ <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
 
-<!-- AngularFire -->
-<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+ <!-- AngularFire -->
+ <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
-   <!-- build:js({.tmp,app}) scripts/scripts.js -->
-   <script src="scripts/app.js"></script>
-   <script src="scripts/config/config.js"></script>
-   <script src="scripts/services.js"></script>
-   <script src="scripts/controllers/main.js"></script>
-   <script src="scripts/controllers/food.js"></script>
-   <!-- endbuild -->
- </body>
- </html>
+ <!-- build:js({.tmp,app}) scripts/scripts.js -->
+ <script src="scripts/app.js"></script>
+ <script src="scripts/config/config.js"></script>
+ <script src="scripts/services.js"></script>
+ <script src="scripts/controllers/main.js"></script>
+ <script src="scripts/controllers/food.js"></script>
+ <!-- endbuild -->
+
+</body>
+</html>
