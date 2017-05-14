@@ -12,31 +12,39 @@ angular.module('joyGridApp')
 
     $scope.foodList = $firebaseArray(JoyDB.child('foods'));
 
-    $scope.toggleUploadDiv = function() {
-      console.log('hello world');
+    $scope.options = {};
+    $scope.options.cloud_name = 'ianstalter';
+    $scope.options.upload_preset = 'i99sp2yt';
+    $scope.options.api_key = '';
+
+    $scope.selectFile = function() {
+      console.log('here');
+      document.querySelector('#fileInput')
+        .click();
+    }
+
+    $scope.uploadFile = function(file) {
+      cloudinary.upload(file[0], $scope.options)
+
+      .success(function(data) {
+          console.log(data.url);
+          var obj = {};
+          obj.url = data.url;
+          JoyDB.child('foods')
+            .child('mushrooms')
+            .child('pictures')
+            .push(obj);
+          //$scope.foodList['mushrooms'].push(obj);
+          //$scope.foodList.$save;
+        })
+        .error(function(data) {
+          console.log(data);
+        })
     }
 
     $scope.upload = function(file) {
-      console.log('uploading');
-      Upload.upload({
-          url: "https://api.cloudinary.com/v1_1/" + cloudinary.config()
-            .cloud_name + "/upload",
-          data: {
-            upload_preset: cloudinary.config()
-              .upload_preset,
-            tags: 'myphotoalbum',
-            context: 'photo',
-            file: file
-          }
-        })
-        .then(function(resp) {
-          console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-        }, function(resp) {
-          console.log('Error status: ' + resp.status);
-        }, function(evt) {
-          var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-          console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-        });
+      console.log('file', file);
+      getBase64(file);
     };
 
   });

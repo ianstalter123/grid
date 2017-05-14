@@ -42,6 +42,15 @@ angular
   $urlRouterProvider.otherwise('/main');
 })
 
+.config(function(cloudinaryProvider) {
+  cloudinaryProvider.config({
+    upload_endpoint: 'https://api.cloudinary.com/v1_1/', // default
+    cloud_name: 'ianstalter', // required
+    upload_preset: 'i99sp2yt', // optional
+  })
+})
+
+
 
 .directive('modalDialog', function() {
     return {

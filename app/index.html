@@ -43,9 +43,14 @@
         <div class="floatright">
          <li
          class="brand">
+
          <i
-         ng-click="toggleUploadDiv()"
+         ng-click="selectFile()"
          class="fa fa-plus" aria-hidden="true"></i>
+         <input
+         style="display:none"
+          name="file" type="file" id="fileInput"
+         onchange="angular.element(this).scope().uploadFile(this.files)" />
 
        </li>
      </div>
@@ -59,6 +64,7 @@
      </div>
 
      <div class="container">
+     {{file}}
       <ui-view></ui-view>
     </div>
 
@@ -76,10 +82,10 @@
       font-size: 100px;
       float: left;
       padding:10px;
-       margin-left:20px"
+      margin-left:20px"
       class="fa fa-home"
       ui-sref="main"
-       aria-hidden="true"></i>
+      aria-hidden="true"></i>
       <i
       style="    color: black;
       font-size: 100px;
@@ -88,29 +94,31 @@
       margin-left:100px"
       class="fa fa-search" aria-hidden="true"></i>
       <i
+      ng-controller="mainCtrl"
+      ng-click="selectFile()"
       style="    color: black;
       font-size: 100px;
       float: left;
       padding:10px;
-       margin-left:100px"
-       ngf-select="upload($file)"
+      margin-left:100px"
+
       class="fa fa-camera" aria-hidden="true"></i>
       <i
       style="    color: black;
       font-size: 100px;
       float: left;
       padding:10px;
-       margin-left:100px"
+      margin-left:100px"
       class="fa fa-heart"
 
-       aria-hidden="true"></i>
+      aria-hidden="true"></i>
       <i
       style="    color: black;
       font-size: 100px;
       float: left;
       padding:10px;
-       margin-left:100px"
-       ui-sref='food({ foodId: "mushrooms" })'
+      margin-left:100px"
+      ui-sref='food({ foodId: "mushrooms" })'
       class="fa fa-user-circle" aria-hidden="true"></i>
 
     </div>
@@ -130,6 +138,7 @@
 
  <!-- build:js(.) scripts/vendor.js -->
  <!-- bower:js -->
+
  <script src="/bower_components/angular/angular.js"></script>
  <script src="/bower_components/angular-animate/angular-animate.js"></script>
  <script src="/bower_components/angular-route/angular-route.js"></script>
