@@ -12,4 +12,8 @@ angular.module('joyGridApp')
 
     $scope.foodList = $firebaseArray(JoyDB.child('foods'));
 
+    $scope.toggleUploadDiv = function() {
+      console.log('hello world');
+    }
+
   });

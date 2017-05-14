@@ -36,6 +36,11 @@ angular
   $stateProvider.state(foodState);
 })
 
+.config(function($urlRouterProvider) {
+  $urlRouterProvider.otherwise('/main');
+})
+
+
 .directive('modalDialog', function() {
     return {
       restrict: 'E',
@@ -43,12 +48,19 @@ angular
         show: '=',
         data: '=',
         content: '=',
-        profile: '='
+        profile: '=',
+        index: '='
       },
       replace: true, // Replace with the template below
       link: function(scope, element, attrs) {
         console.log(scope);
         scope.current = 0;
+        scope.submitComment = function(id) {
+          console.log('submitting comment');
+          scope.data[id].comments.push(scope.comment);
+          scope.data.$save(id);
+          scope.comment = '';
+        }
         scope.$on('index', function(e, data) {
           console.log('in the index', data);
           scope.current = data;
@@ -105,6 +117,23 @@ angular
 
     };
   })
+  .directive('ngEnter', function() {
+    return function(scope, element, attrs) {
+      restrict: 'AE',
+      element.bind("keydown keypress", function(event) {
+        console.log('inside ngenter');
+        if (event.which === 13) {
+          console.log('inside enter call');
+          scope.$apply(function() {
+            scope.$eval(attrs.ngEnter);
+          });
+
+          event.preventDefault();
+        }
+      });
+    };
+  })
+
 
 .filter('capitalize', function() {
   return function(input) {

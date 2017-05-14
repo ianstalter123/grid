@@ -6,7 +6,7 @@
     alt="">
   </div>
   <div style="margin-right:auto" class="cell">
-   <ul style="list-style: none; text-align:left; padding:5px; margin:0">
+   <ul class="userInfo">
     <li>
       <h2>
        {{user.data.results[0].name.first | capitalize}}
@@ -27,12 +27,20 @@
 </div>
 <div class="grid">
   <div ng-repeat="image in images track by $index" class="cell"
-  ng-click='toggleModal()'
+  ng-click='toggleModal($index)'
+
   >
   <div id="overlay">
+  <span
+   class="overlayIcons">
+  <i class="fa fa-comment-o" aria-hidden="true"></i>
+  {{image.comments.length}}
+  <i class="fa fa-heart" aria-hidden="true"></i>
+  {{image.likes}}
+  </span>
     <img
     class="boximage"
-    ng-src="{{image.$value}}"
+    ng-src="{{image.url}}"
     alt=""/>
   </div>
 </div>
@@ -41,7 +49,8 @@
 <modal-dialog
 profile="user.data.results[0]"
 data="images"
+index="index"
 content="content"
-show='modalShown' width='750px' height='60%'>
+show='modalShown'>
 <p>Modal Content Goes here<p>
 </modal-dialog>

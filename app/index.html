@@ -3,6 +3,7 @@
 <head>
   <script src="https://use.fontawesome.com/ac0fc0af67.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <meta charset="utf-8">
   <title></title>
   <meta name="description" content="">
@@ -22,7 +23,9 @@
       <![endif]-->
 
       <!-- Add your site or application content here -->
-      <div class="header">
+      <div
+      ng-controller="mainCtrl"
+       class="header">
         <div class="nav">
           <ul>
             <div class="floatleft">
@@ -39,9 +42,10 @@
           </div>
           <div class="floatright">
            <li
-              ui-sref="main"
               class="brand">
-              <i class="fa fa-plus" aria-hidden="true"></i>
+              <i
+              ng-click="toggleUploadDiv()"
+              class="fa fa-plus" aria-hidden="true"></i>
 
             </li>
           </div>
